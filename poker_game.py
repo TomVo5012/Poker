@@ -1,28 +1,7 @@
 from player import Player
 from card import Card
-
-
-def game_rules(dealer_cards):
     
-    high_card = 1
-    one_pair  = 2
-    two_pair = 3
-    three_of_a_kind = 4
-    straight = 5
-    flush = 6
-    full_house = 7
-    four_of_a_kind = 8
-    straight_flush = 9
-    royal_flush = 10
-    
-    
-    
-    
-
-
-game_is_on = True
-    
-while(game_is_on):
+while True:
     
     # Receive player's name and age
     player_name = input("Please Enter Your Name: ")
@@ -57,12 +36,21 @@ while(game_is_on):
         print("We are sad that you leave the game")
         break
     
-    # Initial Buy In For Player is 1000
-    buy_in = 1000
-    print("Your minimum buy in is 1000")
+    
+    # Verifying Buy In Minimum from player 
+    while True:
+        print("How much do you want to buy in? Minimum will be 1000")  
+        player_buy_in = input("Enter The Amount: ")
+        if player_buy_in < 1000:
+            print("Invalid Buy In, The Minimum Buy In is 1000")
+        else:
+            verify_player.buy_in(player_buy_in)
+            print(verify_player)
+            break
+    
     
     # The Main Game Loop
-    while(buy_in > 0):
+    while(player_buy_in > 0):
         
         # Show player's cards 
         print("Your cards are: ")
@@ -70,9 +58,7 @@ while(game_is_on):
         player_set_of_cards = player_cards.player_combine_card()
         print(player_set_of_cards)
         
-        
-        player_input = input("Please enter your bet: ")
-        
+                 
         # Create the new set of cards from dealer
         cards = Card()
         set_of_cards = cards.dealer_combine_card()
