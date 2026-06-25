@@ -1,4 +1,5 @@
 from player import Player
+from card import Card
 
 
 game_is_on = True
@@ -38,10 +39,16 @@ while(game_is_on):
         print("We are sad that you leave the game")
         break
     
+    
+    buy_in = 1000
     # Game starts
-    game_begin = True
-    while(game_begin):
+    
+    while(buy_in > 0):
         pass
+        
+        
+        
+        
         
     
     
