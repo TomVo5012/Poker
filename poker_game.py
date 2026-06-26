@@ -48,7 +48,6 @@ while True:
             print(verify_player)
             break
     
-    
     # The Main Game Loop
     while(player_buy_in > 0):
         
